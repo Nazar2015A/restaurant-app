@@ -110,12 +110,12 @@ const Header = ({show, setShow, items, setItems}) => {
       {/* MOBILE */}
       <div className="flex items-center justify-between md:hidden w-full h-full ">
         <div className="relative flex items-center justify-center">
-          <HiOutlineShoppingCart className="text-textColor text-2xl cursor-pointer" onClick={showCart} />
-          {cartItems && cartItems.length > 0 && (
+          <HiOutlineShoppingCart className="text-textColor text-2xl cursor-pointer" onClick={() => setShow((prev) => !prev)} />
+          
               <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
-              <p className="text-xs text-white font-semibold">{cartItems.length}</p>
+              <p className="text-xs text-white font-semibold">{items.length}</p>
             </div>
-            )}
+            
         </div>
 
         <Link to={"/"} className="flex items-center gap-2">
