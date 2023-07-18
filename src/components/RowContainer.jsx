@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { motion } from "framer-motion";
 import NotFound from "../img/NotFound.svg";
-import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
 
 
 const RowContainer = ({ flag, data, scrollValue, items, setItems }) => {
@@ -69,7 +67,7 @@ const RowContainer = ({ flag, data, scrollValue, items, setItems }) => {
                 <img
                   src={item?.image}
                   alt=""
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain select-none"
                 />
               </motion.div>
               <motion.div

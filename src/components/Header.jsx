@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../img/logo.png";
-import { MdAdd, MdLogout } from "react-icons/md";
+import { MdLogout } from "react-icons/md";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import avatar from "../img/avatar.png";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const Header = ({show, setShow, items, setItems}) => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
+  const [{ user}, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
 
@@ -42,17 +42,12 @@ const Header = ({show, setShow, items, setItems}) => {
     });
   };
 
-  const showCart = () => {
-    dispatch({
-      type: actionType.SET_CART_SHOW,
-      cartShow: !cartShow,
-    });
-  };
+  
 
   return (
     <header className="fixed z-50 w-screen p-6 px-16 bg-primary">
       <div className="hidden md:flex w-full h-full items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" onClick={() => setTimeout(()=> window.scrollTo(0, 0) ,200)} className="flex items-center gap-2">
           <img src={Logo} alt="" className="w-8 object-cover" />
           <p className="text-headingColor text-xl font-bold">City</p>
         </Link>

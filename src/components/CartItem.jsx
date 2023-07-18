@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { motion } from "framer-motion";
-import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
-import { fetchCart } from "../utils/fetchLocalStorageData";
 
 const CartItem = ({ item, items,  setItems, flag, setFlag}) => {
   
